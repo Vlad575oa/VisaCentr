@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/_next/', '/api/'],
         },
-        sitemap: 'https://visacentr.kz/sitemap.xml',
+        sitemap: 'https://visa-service.kz/sitemap.xml',
     };
 }

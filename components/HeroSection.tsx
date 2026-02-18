@@ -14,6 +14,8 @@ export default function HeroSection() {
                     fill
                     priority
                     fetchPriority="high"
+                    sizes="100vw"
+                    quality={80}
                     style={{ objectFit: 'cover' }}
                     className="opacity-30"
                 />

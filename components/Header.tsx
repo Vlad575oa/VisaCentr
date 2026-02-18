@@ -15,24 +15,33 @@ export default function Header() {
     const [activeSection, setActiveSection] = useState("");
 
     useEffect(() => {
-        const handleScroll = () => {
-            const sections = navLinks.map(link => link.href.substring(1));
-            let current = "";
+        const sections = navLinks.map(link => link.href.substring(1));
+        const observers: IntersectionObserver[] = [];
 
-            for (const section of sections) {
-                const element = document.getElementById(section);
-                if (element) {
-                    const rect = element.getBoundingClientRect();
-                    if (rect.top <= 100) {
-                        current = section;
-                    }
-                }
-            }
-            setActiveSection(current);
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
         };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        const observerCallback = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        sections.forEach((sectionId) => {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                observer.observe(element);
+            }
+        });
+
+        return () => observer.disconnect();
     }, []);
 
     return (

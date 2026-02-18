@@ -1,13 +1,16 @@
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
-import DestinationsSection from "@/components/DestinationsSection";
-import ProcessSection from "@/components/ProcessSection";
-import ComplexCasesSection from "@/components/ComplexCasesSection";
-import ReviewsSection from "@/components/ReviewsSection";
 import StructuredData from "@/components/StructuredData";
-import FloatingTelegram from "@/components/FloatingTelegram";
 import Footer from "@/components/Footer";
+
+// Dynamic imports for below-the-fold components
+const DestinationsSection = dynamic(() => import("@/components/DestinationsSection"));
+const ProcessSection = dynamic(() => import("@/components/ProcessSection"));
+const ComplexCasesSection = dynamic(() => import("@/components/ComplexCasesSection"));
+const ReviewsSection = dynamic(() => import("@/components/ReviewsSection"));
+const FloatingTelegram = dynamic(() => import("@/components/FloatingTelegram"));
 
 export default function Home() {
     return (

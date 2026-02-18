@@ -78,6 +78,7 @@ export default function DestinationsSection() {
                                     fill
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     style={{ objectFit: 'cover' }}
+                                    decoding="async"
                                     className="transition-transform duration-500 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-surface-dark via-surface-dark/40 to-transparent opacity-90"></div>

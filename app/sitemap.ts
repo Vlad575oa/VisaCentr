@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://visacentr.kz';
+    const baseUrl = 'https://visa-service.kz';
 
     return [
         {

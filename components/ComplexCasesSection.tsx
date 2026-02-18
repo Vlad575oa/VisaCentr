@@ -45,6 +45,7 @@ export default function ComplexCasesSection() {
                                 alt="Business professional discussing documents at desk"
                                 fill
                                 style={{ objectFit: 'cover' }}
+                                decoding="async"
                                 className="opacity-80"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent lg:bg-gradient-to-l lg:from-surface-dark lg:via-transparent"></div>
